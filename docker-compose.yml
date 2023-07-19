@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  viking-db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: vikings
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+    networks:
+      - viking_network  
+    ports:
+      - 5432:5432
+
+networks:
+  viking_network:
+    external:
+      name: viking_network
