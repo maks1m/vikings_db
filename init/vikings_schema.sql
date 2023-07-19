@@ -28,3 +28,15 @@ ALTER TABLE "viking_movies" ADD FOREIGN KEY ("viking_id") REFERENCES "vikings" (
 ALTER TABLE "viking_images" ADD FOREIGN KEY ("movie_id") REFERENCES "viking_movies" ("id");
 
 ALTER TABLE "viking_images" ADD FOREIGN KEY ("viking_id") REFERENCES "vikings" ("id");
+
+
+------------
+create table public."user" (
+    id serial primary key,
+    email varchar not null,
+    password varchar not null
+);
+alter table public."user" owner to admin;
+
+insert into "user" (email, password)
+values ('admin', 'admin');
