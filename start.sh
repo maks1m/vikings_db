@@ -1,3 +1,3 @@
 docker network create viking_network
 
-docker-compose up -d
+docker compose up -d
