@@ -9,6 +9,7 @@ services:
       POSTGRES_DB: vikings
     volumes:
       - ./init:/docker-entrypoint-initdb.d
+      - ./postgres-data:/var/lib/postgresql/data
     networks:
       - viking_network  
     ports:
